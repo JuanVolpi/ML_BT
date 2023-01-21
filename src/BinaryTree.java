@@ -1,4 +1,4 @@
-public class BinaryTree {  
+public class BinaryTree {
     public Node root;
     public Node last;
 
@@ -7,16 +7,23 @@ public class BinaryTree {
         this.last = root;
     }
 
-
-    public Node Addnode(Node a){
-        return this.last = this.last.Esqdir(a);
+    BinaryTree() {
+        new BinaryTree(null);
     }
 
-    public Node left() {
-        return this.root.getLeft();
-    }
-    public Node right() {
-        return this.root.getRight();
+    /* O(1) insertion */
+    public Node addNode(Node a) {
+        if (root == null)
+            return this.root = this.last = a;
+        else
+            return this.last = this.last.insertFromNode(a);
     }
 
+    public Node getRoot() {
+        return root;
+    }
+
+    public Node getLast() {
+        return last;
+    }
 }
